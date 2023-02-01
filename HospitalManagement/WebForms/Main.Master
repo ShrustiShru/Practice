@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="HospitalSoftware.WebForms.Main" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../bootstrap.min.css" rel="stylesheet" />
+    <link href="../font-awesome.min.css" rel="stylesheet" />
+</head>
+<body style="background-color:lavender">
+    <form id="form1" runat="server">
+    <div class="container">
+        <div class="row">
+        <h1 style="color:maroon;text-align:center">Hospital Management System</h1>
+            <p></p>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <asp:Menu runat="server">
+                    <Items>
+                        <asp:MenuItem Text="Home" NavigateUrl="~/WebForms/HomePage.aspx" />
+                        <asp:MenuItem Text="Patient" NavigateUrl="~/WebForms/RegisterPatient.aspx" />
+                        <asp:MenuItem Text="Doctor" NavigateUrl="~/WebForms/DoctorView.aspx" />
+                        <asp:MenuItem Text="Billing" NavigateUrl="~/WebForms/Billing.aspx" />
+                        <asp:MenuItem Text="Caching" NavigateUrl="~/WebForms/Caching.aspx" />
+                    </Items>
+                </asp:Menu>
+            </div>
+            <div class="col-md-9">
+                <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    <h1 style="color:darkcyan">Home Page</h1>
+                    <p></p>  <%--To give a space between heading and body--%>
+                    <p style="font-size:20px">Welcome to Manipal Hospital <br />
+                        We try our best to provide a Hygiene Facility to our Patients!!!!<br />
+                        Our Hospital has the best doctors of the Field to treat you with .........
+                    </p>
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
