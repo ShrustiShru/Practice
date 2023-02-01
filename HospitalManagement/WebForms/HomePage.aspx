@@ -1,1 +1,0 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebForms/Main.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="HospitalSoftware.WebForms.HomePage" %>
