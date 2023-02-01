@@ -1,0 +1,7 @@
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\obj\Debug\MovieDatabase.csprojAssemblyReference.cache
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\obj\Debug\MovieDatabase.csproj.CoreCompileInputs.cache
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\bin\Debug\MovieDatabase.exe.config
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\bin\Debug\MovieDatabase.exe
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\bin\Debug\MovieDatabase.pdb
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\obj\Debug\MovieDatabase.exe
+D:\StarmarkShru\Dotnet Programming\Week 6\Day 2\Assignment Movie\MovieDatabase\MovieDatabase\obj\Debug\MovieDatabase.pdb
