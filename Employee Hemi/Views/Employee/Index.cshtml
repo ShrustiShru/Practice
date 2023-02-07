@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "AjaxReplace"
+    };
+}
+
+<h2>Employee Records</h2>
+
+<div>
+    <nav>
+        @Ajax.ActionLink("Get All Employee", "GetAllEmployees",null, options, new { @class = "btn btn-info" } )
+        @Ajax.ActionLink("Add", "Add", null, options, new { @class = "btn btn-info" })
+    </nav>
+    <div id="AjaxReplace">
+
+    </div>
+</div>

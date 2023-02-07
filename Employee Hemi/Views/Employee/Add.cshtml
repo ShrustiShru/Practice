@@ -1,0 +1,33 @@
+﻿@model EmployeeLib.DataClasses.Employee
+
+@{
+    List<SelectListItem> depts = new List<SelectListItem>();
+
+    foreach (var dept in ViewBag.Departments)
+    {
+        depts.Add(new SelectListItem { Text = dept.DepartmentName, Value = (dept.DepartmentId).ToString() });
+    }
+}
+
+@using (Html.BeginForm())
+{
+    <lable>Employee Id :</lable>
+    @Html.EditorFor((m) => m.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+
+    <lable>Employee Name :</lable>
+    @Html.EditorFor((m) => m.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
+
+    <lable>Employee Address :</lable>
+    @Html.EditorFor((m) => m.EmployeeAdress, new { htmlAttributes = new { @class = "form-control" } })
+
+    <lable>Employee Salary :</lable>
+    @Html.EditorFor((m) => m.EmployeeSalary, new { htmlAttributes = new { @class = "form-control" } })
+
+    <lable>Department Name :</lable>
+    @Html.DropDownList("DepartmentName", depts, new { htmlAttributes = new { @class = "form-control" } })
+
+    <div>
+        <button class="btn btn-info">Add</button>
+    </div>
+}
+

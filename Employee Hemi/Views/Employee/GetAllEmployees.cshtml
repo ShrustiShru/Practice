@@ -1,0 +1,33 @@
+﻿@model List<EmployeeLib.DataClasses.Employee>
+
+@{ 
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "AjaxReplace"
+    };
+}
+
+<table class="table-bordered table-hover table-striped">
+    <tr >
+        <td>Employee Name</td>
+        <td>Employee Address</td>
+        <td>Employee Salary</td>
+        <td>Department Id</td>
+        <td>Options</td>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+    <tr>
+        <td>@emp.EmployeeName</td>
+        <td>@emp.EmployeeAdress</td>
+        <td>@emp.EmployeeSalary</td>
+        <td>@emp.EmployeeDepartment</td>
+        <td>
+            @Ajax.ActionLink("Edit", "Update", new { id = emp.EmployeeId }, options, new { @class = "btn btn-info" })
+            @Ajax.ActionLink("Delete", "Remove", new { id = emp.EmployeeId }, options, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+    }
+</table>
