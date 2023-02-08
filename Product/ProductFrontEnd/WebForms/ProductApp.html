@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.6.3.min.js"></script>
+    <script src="../JS/ProductInfo.js"></script>
+</head>
+<body style="margin:50px; background-color:lavender">
+    <div class="container"></div>
+    <div class="row">
+        <h1>Product Details</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Products </a></li>
+                <!--<li> <a href="#">Add</a></li>-->
+            </ul>
+        </nav>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <table class="table-bordered table-striped table-hover ">
+                    <tr>
+                        <th>ProductId</th>
+                        <th>ProductName</th>
+                        <th>Quantity</th>
+                        <th>Details</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="image" src="#" alt="ProductImage">
+                </div>
+                <div class="col-md-6">
+                    <p><input disabled class="form-control" id="txtId"></p>
+                    <p><input class="form-control" id="txtName"></p>
+                    <p><input class="form-control" id="txtPrice"></p>
+                    <p><input class="form-control" id="txtQuantity"></p>
+                    <p>
+                        <button class="btn btn-dark" id="btnUpdate">Update</button>
+                        <button class="btn btn-info" id="btnAdd">Add</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
