@@ -1,0 +1,12 @@
+<h1>Product Details</h1>
+<p></p>
+<div *ngIf="selected.name" class="row">
+    <div class="col-md-6">
+        <img [src]="selected.image"/>
+    </div>
+    <div class="col-md-6">
+        <input disabled [(ngModel)]="selected.id"/>
+        <input [(ngModel)]="selected.name"/>
+        <input [(ngModel)]="selected.price"/>
+    </div>
+</div>
