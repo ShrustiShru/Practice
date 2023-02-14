@@ -1,0 +1,28 @@
+<div class="ontainer">
+    <div class="row">
+        <h1>Toruist Places Details</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table border="1" class="table-bordered table-stripped">
+                <tr>
+                    <td>Place Id</td>
+                    <td>Place Name</td>
+                    <td>States</td>
+                    <td>Details</td>
+                </tr>
+                <tr *ngFor="let item of data">
+                    <td>{{item.PlaceId}}</td>
+                    <td>{{item.PlaceName}}</td>
+                    <td>{{item.States}}</td>
+                    <td>
+                        <a href="#" src="" alt="PlacesDetails">View</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            
+        </div>
+    </div>
+</div>

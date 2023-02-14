@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TouristModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ImageFiles">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaceId" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TouristPlaces">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaceName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pincode" Type="int" Nullable="false" />
+          <Property Name="States" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Significance" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Descriptions" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ImageFile__Place__2EDAF651">
+          <End Role="TouristPlaces" Type="Self.TouristPlaces" Multiplicity="1" />
+          <End Role="ImageFiles" Type="Self.ImageFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristPlaces">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="ImageFiles">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TouristModelStoreContainer">
+          <EntitySet Name="ImageFiles" EntityType="Self.ImageFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TouristPlaces" EntityType="Self.TouristPlaces" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ImageFile__Place__2EDAF651" Association="Self.FK__ImageFile__Place__2EDAF651">
+            <End Role="TouristPlaces" EntitySet="TouristPlaces" />
+            <End Role="ImageFiles" EntitySet="ImageFiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TouristModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ImageFile">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceId" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TouristPlace" Relationship="Self.FK__ImageFile__Place__2EDAF651" FromRole="ImageFiles" ToRole="TouristPlaces" />
+        </EntityType>
+        <EntityType Name="TouristPlace">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pincode" Type="Int32" Nullable="false" />
+          <Property Name="States" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Significance" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ImageFiles" Relationship="Self.FK__ImageFile__Place__2EDAF651" FromRole="TouristPlaces" ToRole="ImageFiles" />
+        </EntityType>
+        <Association Name="FK__ImageFile__Place__2EDAF651">
+          <End Role="TouristPlaces" Type="Self.TouristPlace" Multiplicity="1" />
+          <End Role="ImageFiles" Type="Self.ImageFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TouristPlaces">
+              <PropertyRef Name="PlaceId" />
+            </Principal>
+            <Dependent Role="ImageFiles">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TouristEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ImageFiles" EntityType="Self.ImageFile" />
+          <EntitySet Name="TouristPlaces" EntityType="Self.TouristPlace" />
+          <AssociationSet Name="FK__ImageFile__Place__2EDAF651" Association="Self.FK__ImageFile__Place__2EDAF651">
+            <End Role="TouristPlaces" EntitySet="TouristPlaces" />
+            <End Role="ImageFiles" EntitySet="ImageFiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TouristModelStoreContainer" CdmEntityContainer="TouristEntities">
+          <EntitySetMapping Name="ImageFiles">
+            <EntityTypeMapping TypeName="TouristModel.ImageFile">
+              <MappingFragment StoreEntitySet="ImageFiles">
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TouristPlaces">
+            <EntityTypeMapping TypeName="TouristModel.TouristPlace">
+              <MappingFragment StoreEntitySet="TouristPlaces">
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="States" ColumnName="States" />
+                <ScalarProperty Name="Significance" ColumnName="Significance" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
