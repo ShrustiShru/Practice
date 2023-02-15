@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6959bce2c6eb41d2bb2b683a37fad9aa" Name="Diagram1">
+        <EntityTypeShape EntityType="TransportModel.Bill" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransportModel.RouteName" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransportModel.RouteStop" Width="1.5" PointX="5.375" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TransportModel.SamsungEmployee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TransportModel.FK__Bill__EmpId__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="TransportModel.FK__Bill__RouteNumbe__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="TransportModel.FK__RouteStop__Route__29221CFB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

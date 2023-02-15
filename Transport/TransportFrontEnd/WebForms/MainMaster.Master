@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="TransportFrontEnd.WebForms.MainMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color:lavender" >
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <h1 style="color:maroon;text-align:center">Welcome to Samsung Transport System</h1>
+                 <p></p>
+            <hr />
+            </div>
+
+             <div class="row">
+            <div class="col-md-3">
+                <asp:Menu runat="server">
+                    <Items>
+                        <asp:MenuItem Text="Home" NavigateUrl="~/WebForms/Home.aspx" />
+                        <asp:MenuItem Text="Book Ticket" NavigateUrl="~/WebForms/BookTicket.aspx" />
+                        <asp:MenuItem Text="Display Employee" NavigateUrl="~/WebForms/DisplayEmployees.aspx" />
+                        <asp:MenuItem Text="Display and Add Routes" NavigateUrl="~/WebForms/Routes.aspx" />
+                        <asp:MenuItem Text="Add Stops" NavigateUrl="~/WebForms/AddStops.aspx" />
+                    </Items>
+                </asp:Menu>
+            </div>
+                <div class="col-md-9">
+                    <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1">
+                        <h1 style="color:darkcyan">Home Page</h1>
+                    </asp:ContentPlaceHolder>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
