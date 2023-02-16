@@ -1,0 +1,19 @@
+<hr>
+
+<div class="container">
+    <h1><u>Add New Employee Details</u></h1>
+    <br>
+        <div class="col-md-7">
+            <div><b>Employee Id:</b> <input type="text" class="form-control" [(ngModel)]="newEmployee.id" placeholder="Enter the Employee ID"></div><br>
+            <div><b>Employee Name:</b> <input type="text" class="form-control" [(ngModel)]="newEmployee.empName" placeholder="Enter the Employee Name"></div><br>
+            <div><b>Employee Address:</b> <input type="text" class="form-control" [(ngModel)]="newEmployee.empAddress" placeholder="Enter the Employee Address"></div><br>
+            <div><b>Employee Phone:</b> <input type="text" class="form-control" [(ngModel)]="newEmployee.empPhone" placeholder="Enter the Employee Phone Number"></div><br>
+        </div>
+        
+        <div>
+            <input type="file" (change)="OnFileChange($event)">
+            <img *ngIf="imageUrl" [src]="imageUrl">
+        </div>
+        <br>
+        <button (click)="OnAddEmployee()">Add</button>
+    </div>

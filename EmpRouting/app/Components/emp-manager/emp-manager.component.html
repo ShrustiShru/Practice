@@ -1,0 +1,34 @@
+<div *ngFor="let item of empList" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{item.empName}}</h2>
+        </div>
+        <div class="cardbody">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src={{item.empPic}} alt="Employee Image">  <!-- src={{emp.empPic}} can be used as [src]="emp.empPic"-->
+                </div>
+
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" [value]="item.id">
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" [value]="item.empName">
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" [value]="item.empAddress">
+                </div>
+
+                <div class="col-md-2">
+                    <ul class="navbar" style="list-style-type:none;">
+                        <li class="nav-item">
+                            <a style="font-size: 25px;"  class="btn btn-info btn-sm" routerLink="/employees/view/{{item.id}}">View</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a style="font-size: 25px;" class="btn btn-secondary btn-sm" routerLink="/employees/edit/{{item.id}}">Edit</a>
+                        </li>
+                    </ul>
+                </div>
+                <p></p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "employees" : [
+        {
+            "empId":1,
+            "empName" : "Shrusti",
+            "empAddress" : "Bangalore",
+            "empPhone" : 6398745461,
+            "empPic" : "./assets/Images/pic1.png" 
+        }
+    ]
+}
